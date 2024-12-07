@@ -6,4 +6,4 @@ jobs:
     env:
       USER_NAME: ${{ vars.SAMPLE_VARIABL1 }}
     steps:
-      - run: echo "${{ env.USERNAME }}"
+      - run: echo "${{ env.USER_NAME }}"
