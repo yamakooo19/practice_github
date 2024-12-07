@@ -10,6 +10,7 @@ on:
       - '**.py' # Pythonファイルの変更時
       - '!tests/**' # テストファイルは除外
       - 'package.json'
+      - '**.yml'
 jobs:
   print:
     runs-on: ubuntu-latest
