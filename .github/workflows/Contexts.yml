@@ -3,30 +3,15 @@ on: push
 jobs:
   print:
     runs-on: ubuntu-latest
+    env:
+      ACTION: ${{ github.action }}
+      ACTION_PATH: ${{ github.action_path }}
+      ACTION_REF: ${{ github.action_ref }}
+      ACTION_REPOSITORY: ${{ github.action_repository }}
+      ACTION_STATUS: ${{ github.action_status }}
     steps:
-      - run: echo "${{ github.action }}"
-      - run: echo "${{ github.action_path }}"
-      - run: echo "${{ github.action_ref }}"
-      - run: echo "${{ github.action_repository }}"
-      - run: echo "${{ github.action_status }}"
-      - run: echo "${{ github.actor }}"
-      - run: echo "${{ github.actor_id }}"
-      - run: echo "${{ github.api_url }}"
-      - run: echo "${{ github.base_ref }}"
-      - run: echo "${{ github.env }}"
-      - run: echo "${{ github.event }}"
-      - run: echo "${{ github.event_name }}"
-      - run: echo "${{ github.event_path }}"
-      - run: echo "${{ github.head_ref }}"
-      - run: echo "${{ github.ref_name }}"
-      - run: echo "${{ github.repository }}"
-      - run: echo "${{ github.repository_id }}"
-      - run: echo "${{ github.repository_owner }}"
-      - run: echo "${{ github.run_id }}"
-      - run: echo "${{ github.run_number }}"
-      - run: echo "${{ github.secret_source }}"
-      - run: echo "${{ github.server_url }}"
-      - run: echo "${{ github.sha }}"
-      - run: echo "${{ github.triggering_actor }}"
-      - run: echo "${{ github.workflow }}"
-      - run: echo "${{ github.workspace }}"
+      - run: echo "${{ env.ACTION }}"
+      - run: echo "${{ env.ACTION_PATH }}"
+      - run: echo "${{ env.ACTION_REF }}"
+      - run: echo "${{ env.ACTION_REPOSITORY }}"
+      - run: echo "${{ env.ACTION_STATUS }}"
