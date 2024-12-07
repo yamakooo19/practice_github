@@ -6,7 +6,7 @@ jobs:
     steps:
       - run: echo "${{ github.action }}"
       - run: echo "${{ github.action_path }}"
-      - run: echo "${ github.action_ref }}"
+      - run: echo "${{ github.action_ref }}"
       - run: echo "${{ github.action_repository }}"
       - run: echo "${{ github.action_status }}"
       - run: echo "${{ github.actor }}"
