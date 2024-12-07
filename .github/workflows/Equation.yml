@@ -24,7 +24,7 @@ jobs:
           LITERAL_OMIT_STRING: Hello
 
       - run: |
-          printenv | grep '_OPERATOR\|_TEST\|CONDITIONAL\|STRING_CONCAT'
+          printenv | grep '_OPERATOR\|_TEST\|_THAN|CONDITIONAL\|STRING_CONCAT'
         env:
           # 論理演算子
           AND_OPERATOR: ${{ true && true }}
