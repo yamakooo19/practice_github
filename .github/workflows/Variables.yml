@@ -1,9 +1,9 @@
-name: Variable
-on: push
-jobs:
-  print:
-    runs-on: ubuntu-latest
-    env:
-      USER_NAME: ${{ vars.SAMPLE_VARIABL1 }}
-    steps:
-      - run: echo "${{ env.USER_NAME }}"
+# name: Variable
+# on: push
+# jobs:
+#   print:
+#     runs-on: ubuntu-latest
+#     env:
+#       USER_NAME: ${{ vars.SAMPLE_VARIABL1 }}
+#     steps:
+#       - run: echo "${{ env.USER_NAME }}"

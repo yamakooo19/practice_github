@@ -1,34 +1,34 @@
-name: Function
-on: push
-jobs:
-  compare:
-    runs-on: ubuntu-latest
-    steps:
-      - run: printenv | grep '_FUNC'
-        env:
-          CONTAINS_FUNC: ${{  contains('Hello', 'ell') }} #「ell」を含むか
-          STARTS_WITH_FUNC: ${{ startsWith('Hello', 'He') }} #「He」で始まるか
-          ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }} # 「lo」で終わるか
+# name: Function
+# on: push
+# jobs:
+#   compare:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: printenv | grep '_FUNC'
+#         env:
+#           CONTAINS_FUNC: ${{  contains('Hello', 'ell') }} #「ell」を含むか
+#           STARTS_WITH_FUNC: ${{ startsWith('Hello', 'He') }} #「He」で始まるか
+#           ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }} # 「lo」で終わるか
 
-  generate:
-    runs-on: ubuntu-latest
-    steps:
-      - run: printenv | grep '_FUNC'
-        env:
-          FORMAT_FUNC: ${{ format('{0}... {1}.', 'Hi', 'world') }}
-          JOIN_FUNC: ${{ join(github.event.*.html_url, ',') }}
+#   generate:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: printenv | grep '_FUNC'
+#         env:
+#           FORMAT_FUNC: ${{ format('{0}... {1}.', 'Hi', 'world') }}
+#           JOIN_FUNC: ${{ join(github.event.*.html_url, ',') }}
 
-  dump:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "${{ env.CONTEXT }}"
-        env:
-          CONTEXT: ${{ toJSON(github) }}
+#   dump:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: echo "${{ env.CONTEXT }}"
+#         env:
+#           CONTEXT: ${{ toJSON(github) }}
 
-  hash:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "${{ env.HASH }}"
-        env:
-          HASH: ${{ hashFiles('.github/workflows/*.yml') }} #ハッシュ値の生成
+#   hash:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - run: echo "${{ env.HASH }}"
+#         env:
+#           HASH: ${{ hashFiles('.github/workflows/*.yml') }} #ハッシュ値の生成
