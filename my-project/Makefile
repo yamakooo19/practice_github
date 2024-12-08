@@ -20,6 +20,8 @@ down:
 # コンテナの再起動
 restart:
 	docker-compose restart
+	@echo "初期化が完了しました！"
+	@echo "http://localhost:8080/"
 
 # ログの表示
 logs:
