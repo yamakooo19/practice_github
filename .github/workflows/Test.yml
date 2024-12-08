@@ -1,6 +1,6 @@
 name: Test
 on:
-  pull_reques:
+  pull_request:
     paths: ['my-project/app/**/*.php']
 jobs:
   test:
