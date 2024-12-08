@@ -13,10 +13,3 @@ jobs:
       - run: exit 0 #処理ステータスが0なので成功ステータス
       - run: echo "Hello"
         if: ${{ success() }}
-
-  failure:
-    runs-on: ubuntu-latest
-    steps:
-      - run: exit 0 #処理ステータスが0ではないためエラーが発生
-      - run: echo "Hello"
-        if: ${{ failure() }}
