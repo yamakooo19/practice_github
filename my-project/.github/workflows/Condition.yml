@@ -17,6 +17,6 @@ jobs:
   failure:
     runs-on: ubuntu-latest
     steps:
-      - run: exit 1 #処理ステータスが0ではないためエラーが発生
+      - run: exit 0 #処理ステータスが0ではないためエラーが発生
       - run: echo "Hello"
         if: ${{ failure() }}
