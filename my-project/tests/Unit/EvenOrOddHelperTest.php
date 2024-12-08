@@ -72,6 +72,7 @@ class EvenOrOddHelperTest extends TestCase
         ];
     }
 
+
     /**
      * 奇数のテストデータを提供するデータプロバイダー
      */
