@@ -1,44 +1,44 @@
-name: Equation
-on:
-  push:
-    branches: #オブジェクトフィルターの使用例(*や！などを使用)
-      - main
-      - 'feature/**' # featureから始まる全ブランチ
-      - '!feature/temp-*' # temporary feature branchesは除外
-    paths:
-      - '**.js' # JavaScriptファイルの変更時
-      - '**.py' # Pythonファイルの変更時
-      - '!tests/**' # テストファイルは除外
-      - 'package.json'
-      - '**.yml'
-jobs:
-  print:
-    runs-on: ubuntu-latest
-    steps:
-      - run: printenv | grep 'LITERAL' #リテラルの使用例
-        env:
-          LITERAL_NULL: ${{ null }}
-          LITERAL_BOOLEAN: ${{ true }}
-          LITERAL_NUMBER: ${{ 1234 }}
-          LITERAL_STRING: ${{ 'Hello' }}
-          LITERAL_OMIT_STRING: Hello
+# name: Equation
+# on:
+#   push:
+#     branches: #オブジェクトフィルターの使用例(*や！などを使用)
+#       - main
+#       - 'feature/**' # featureから始まる全ブランチ
+#       - '!feature/temp-*' # temporary feature branchesは除外
+#     paths:
+#       - '**.js' # JavaScriptファイルの変更時
+#       - '**.py' # Pythonファイルの変更時
+#       - '!tests/**' # テストファイルは除外
+#       - 'package.json'
+#       - '**.yml'
+# jobs:
+#   print:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: printenv | grep 'LITERAL' #リテラルの使用例
+#         env:
+#           LITERAL_NULL: ${{ null }}
+#           LITERAL_BOOLEAN: ${{ true }}
+#           LITERAL_NUMBER: ${{ 1234 }}
+#           LITERAL_STRING: ${{ 'Hello' }}
+#           LITERAL_OMIT_STRING: Hello
 
-      - run: |
-          printenv | grep '_OPERATOR\|_TEST\|_THAN\|CONDITIONAL\|STRING_CONCAT'
-        env:
-          # 論理演算子
-          AND_OPERATOR: ${{ true && true }}
-          OR_OPERATOR: ${{ false || true }}
-          NOT_OPERATOR: ${{ !false }}
+#       - run: |
+#           printenv | grep '_OPERATOR\|_TEST\|_THAN\|CONDITIONAL\|STRING_CONCAT'
+#         env:
+#           # 論理演算子
+#           AND_OPERATOR: ${{ true && true }}
+#           OR_OPERATOR: ${{ false || true }}
+#           NOT_OPERATOR: ${{ !false }}
 
-          # 比較演算子
-          EQUAL_TEST: ${{ 5 == 5 }}
-          NOT_EQUAL_TEST: ${{ 5 != 3 }}
-          GREATER_THAN: ${{ 10 > 5 }}
-          LESS_THAN: ${{ 5 < 10 }}
+#           # 比較演算子
+#           EQUAL_TEST: ${{ 5 == 5 }}
+#           NOT_EQUAL_TEST: ${{ 5 != 3 }}
+#           GREATER_THAN: ${{ 10 > 5 }}
+#           LESS_THAN: ${{ 5 < 10 }}
 
-          # 条件式
-          CONDITIONAL: ${{ github.ref == 'refs/heads/main' && true }}
+#           # 条件式
+#           CONDITIONAL: ${{ github.ref == 'refs/heads/main' && true }}
 
-          # 文字列操作
-          STRING_CONCAT: ${{ 'Hello' && 'World' }}
+#           # 文字列操作
+#           STRING_CONCAT: ${{ 'Hello' && 'World' }}
