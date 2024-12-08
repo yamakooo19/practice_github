@@ -1,0 +1,13 @@
+name: Test
+on:
+  pull-requests:
+    paths: ['myproject/app/**/*.php']
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4 #ステップ１：　チェックアウト
+      - uses: shivammathur/setup-php@v2 #ステップ2：　言語セットアップ
+        with:
+          php-version: '8.3'
+      - run: ./vendor/bin/phpunit #ステップ3：　テストの実行
