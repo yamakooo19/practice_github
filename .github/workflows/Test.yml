@@ -1,7 +1,7 @@
 name: Test
 on:
   pull-requests:
-    paths: ['myproject/app/**/*.php']
+    paths: ['my-project/app/**/*.php']
 jobs:
   test:
     runs-on: ubuntu-latest
