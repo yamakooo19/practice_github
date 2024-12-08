@@ -1,7 +1,6 @@
 name: Test
 on:
   pull_request:
-    paths: ['my-project/app/**/*.php']
 jobs:
   test:
     runs-on: ubuntu-latest
