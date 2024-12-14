@@ -5,7 +5,11 @@ jobs:
     strategy:
       matrix: #マトリックスの定義
         os: [ubuntu-latest, windows-latest, macos-latest] #osプロパティの定義
+        version: [18, 20] #versionプロパティの定義
     runs-on: ${{ matrix.os }} #osプロパティの参照
     steps:
-      - run: echo "${RUNNER_OS}"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.version }}
+      - run: echo "${RUNNER_OS}" && node --version
         shell: bash
