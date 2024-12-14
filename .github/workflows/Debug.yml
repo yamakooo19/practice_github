@@ -1,15 +1,12 @@
-name: Matrix
+name: Environments
 on: push
 jobs:
   print:
-    strategy:
-      matrix: #マトリックスの定義
-        os: [ubuntu-latest, windows-latest, macos-latest] #osプロパティの定義
-        version: [18, 20] #versionプロパティの定義
-    runs-on: ${{ matrix.os }} #osプロパティの参照
+    runs-on: ubuntu-latest
+    environment: test
+    env:
+      USERNAME: ${{ vars.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
     steps:
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.version }}
-      - run: echo "${RUNNER_OS}" && node --version
-        shell: bash
+      - run: echo "${USERNAME}"
+      - run: echo "${PASSWORD}"
