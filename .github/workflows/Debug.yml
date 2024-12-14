@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: generate #ステップのID
-      - run: echo "result=Hello" >> "${GITHUB_OUTPUT}" #ステップレベルの出力値
+        run: echo "result=Hello" >> "${GITHUB_OUTPUT}" #ステップレベルの出力値
     outputs:
       result: ${{ steps.generate.outputs.result }} #ジョブレベルの出力値
   after:
@@ -14,4 +14,4 @@ jobs:
     steps:
       - env:
           RESULT: ${{ needs.before.outputs.result }}
-      - run: echo "${{ RESULT }}"
+        run: echo "${{ RESULT }}"
