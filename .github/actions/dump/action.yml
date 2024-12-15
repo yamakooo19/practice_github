@@ -14,7 +14,7 @@ outputs:
 runs:
   using: composite
   steps:
-    - run: ptrintenv | sort
+    - run: printenv | sort
       shell: bash
     - run: echo "${CONTEXT}"
       if: ${{ inputs.enable-context == 'true' }}
