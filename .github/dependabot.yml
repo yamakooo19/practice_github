@@ -4,3 +4,8 @@ updates:
     directory: / #パッケージマニフェストの配置先ディレクトリ
     schedule: #バージョンアップスケジュール
       interval: daily
+  # Composerパッケージの設定
+  - package-ecosystem: "composer"
+    directory: "/" # composer.jsonがあるディレクトリ
+    schedule:
+      interval: "daily" # 毎日チェック
